@@ -14,7 +14,7 @@ import { QuesType, Question, Options } from '../../data/globals'
   templateUrl: 'sessions.html',
 })
 export class SessionsPage {
-  session: Question[]
+  questions: Question[] = []
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -36,9 +36,7 @@ export class SessionsPage {
       }]
     }
 
-    this.session[0] = question;
-
-    this.session[0].
+    this.questions[0] = question;
   }
 
 }

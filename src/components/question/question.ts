@@ -13,7 +13,7 @@ import { QuesType, Question, Options } from '../../data/globals';
 })
 export class QuestionComponent {
 
-  @Input('questions') questions: Question[]; 
+  @Input('question') question: Question; 
 
   constructor() {
     console.log('Hello QuestionComponent Component');

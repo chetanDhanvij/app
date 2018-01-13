@@ -21,6 +21,7 @@ export interface Question{
     type: QuesType,
     ques: string,
     img?: string,
-    options: Options[]
+    options?: Options[],
+    tianswer?: string
 
 }

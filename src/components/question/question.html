@@ -1,4 +1,28 @@
 <!-- Generated template for the QuestionComponent component -->
-<div>
- hihihi
-</div>
+
+    <ion-list radio-group *ngIf="question.type == 'MCQSA'" no-lines>
+        <ion-list-header text-wrap  no-lines>
+                {{question.ques}}
+        </ion-list-header>  
+        <ion-item *ngFor="let option of question.options" icon-left>
+            <ion-label text-wrap>{{option.opt}}</ion-label>
+            <ion-radio item-left [value]="option.id"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list *ngIf="question.type == 'MCQMA'"  no-lines>
+        <ion-list-header text-wrap  no-lines>
+                {{question.ques}}
+        </ion-list-header>  
+        <ion-item *ngFor="let option of question.options">
+            <ion-label text-wrap>{{option.opt}}</ion-label>
+            <ion-checkbox item-left [(ngModel)]="option.id"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group *ngIf="question.type == 'TINV'"  no-lines>
+        <ion-list-header text-wrap  no-lines>
+                {{question.ques}}
+        </ion-list-header> 
+        <ion-item>
+            <ion-input type="number" placeholder="Type your ans here" [(ngModel)]="tianswer"></ion-input>
+        </ion-item> 
+    </ion-list>
