@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { QuesType, Question, Options } from '../../data/globals'
+import { QuesType, Question, Options } from '../../data/globals';
+import { SessionProvider } from '../../providers/session/session'
 
 /**
  * Generated class for the SessionsPage page.
@@ -15,7 +16,9 @@ import { QuesType, Question, Options } from '../../data/globals'
 })
 export class SessionsPage {
   questions: Question[] = []
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private session: SessionProvider) {
   }
 
   ionViewDidLoad() {
@@ -37,6 +40,10 @@ export class SessionsPage {
     }
 
     this.questions[0] = question;
+  }
+
+  newQuestion(){
+    this.session.addQuestions("id");
   }
 
 }

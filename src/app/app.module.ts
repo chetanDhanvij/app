@@ -11,6 +11,7 @@ import { QuestionComponent } from '../components/question/question'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SessionProvider } from '../providers/session/session';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SessionProvider
   ]
 })
 export class AppModule {}
